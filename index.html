@@ -1,0 +1,30 @@
+<html>
+	<head>
+		<script type="text/javascript" src="javascripts/jquery-1.7.1.min.js"></script>
+		<script type="text/javascript" src="javascripts/skaia.js"></script>
+		<script type="text/javascript" src="javascripts/aradia.js"></script>
+		<script type="text/javascript">
+			var skaia;
+			var num_aradias = 333;
+			var pixels_per_aradia = 3;
+			window.onload = function(){
+				canvas = document.getElementById("canvas");
+                var buffer_canvas = document.createElement('canvas');
+	            buffer_canvas.width = 3000;
+	            buffer_canvas.height = 500;
+				skaia = new Skaia(canvas, buffer_canvas, pixels_per_aradia);
+				for(var i = 0; i<num_aradias; i++){
+					skaia.addAradia();
+				}
+				skaia.render();
+				//skaia.render();
+				//skaia.render();
+			}
+		</script>
+	</head>
+	
+	<body>
+		<img src = "scratch_bar.gif" width = "100%">
+		<canvas id="canvas" width="3000" height="500">  </canvas>
+	</body>
+</html>
